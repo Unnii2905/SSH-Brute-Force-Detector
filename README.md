@@ -24,6 +24,7 @@ HOW TO USE:
 
 1. Clone the repo
 2. create log files
+   
   mkdir -p logs
   touch logs/blocklist.txt logs/attacker_log.txt
 3. Run the script
