@@ -7,21 +7,21 @@ If someone repeatedly fails to log in via SSH, this tool catches it and blocks t
 ---
 
 What It Does:
- Monitors SSH logs using `journalctl` (for systemd-based systems)
- Detects repeated failed login attempts
- Tracks how many times each IP fails
- Blocks IPs after a threshold (default: 3 attempts)
- Keeps logs of who was blocked and when
+ -Monitors SSH logs using journalctl 
+ -Detects repeated failed login attempts
+ -Tracks how many times each IP fails
+ -Blocks IPs after a threshold (default: 3 attempts)
+ -Keeps logs of who was blocked and when
 
 ---
 
  Requirements
 
- Linux system with systemd
- SSH service enabled
- Python 3
- Root privileges
- IPTables
+ -Linux system with systemd
+ -SSH service enabled
+ -Python 3
+ -Root privileges
+ -IPTables
 
 ---
 
