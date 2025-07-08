@@ -1,39 +1,52 @@
-SSH Brute-Force Detector (Python + IPTables)
+ SSH Brute-Force Detector (
 
-This is a simple but effective Python script I wrote to detect brute-force attacks on SSH and automatically block the attacker’s IP using iptables.
-If someone keeps failing to log in through SSH, this script catches that and blocks them before they get any further. No more guessing passwords!!
+A simple but effective Python script to detect brute-force SSH attacks and automatically block the attacker’s IP using `iptables`.
 
-What it does:
-Looks through SSH logs using journalctl (works on systemd-based systems)
-Finds repeated failed login attempts
-Tracks how many times each IP fails
-If an IP fails more than a set number of times (default: 3,can be changed on the code), it's blocked using iptables
-Keeps logs of who was blocked and when
+If someone repeatedly fails to log in via SSH, this tool catches it and blocks the IP before they get further 
 
+---
 
-REQUIREMENTS
+What It Does:
+ Monitors SSH logs using `journalctl` (for systemd-based systems)
+ Detects repeated failed login attempts
+ Tracks how many times each IP fails
+ Blocks IPs after a threshold (default: 3 attempts)
+ Keeps logs of who was blocked and when
 
-Python
-linux system
-SSH service running
-root privilages 
-Ip tables
+---
 
+ Requirements
 
-HOW TO USE:
+ Linux system with systemd
+ SSH service enabled
+ Python 3
+ Root privileges
+ IPTables
+
+---
+
+ How to Use
 
 1. Clone the repo
-2. create log files
-   
-  mkdir -p logs
-  touch logs/blocklist.txt logs/attacker_log.txt
-3. Run the script
+
+2. Create required log files(if they don't exist)
+ mkdir -p logs
+ touch logs/blocklist.txt logs/attacker_log.txt
+
+
+3. Run the script (as root)
 sudo python3 detect_brute.py
-(make sure you are on root)
+   
 
-why i made this:
-i wanted to make a small project that was useful for real world works
-also easy to expand
+---
 
-Open to feedback, ideas, or collabs!
+ Why I Made This
+
+ I wanted to create a small tool that's actually useful in the real world something simple, effective, and easy to expand for learning.
+
+---
+
+Feel free to open an issue or reach out. Always open to improving this or working on something new!
+
+---
 
